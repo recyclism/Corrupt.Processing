@@ -4,11 +4,11 @@
     String fileExt = ".jpg"; // file extansion (works best with JPG or PNG)
     PImage img;
     void setup(){
-      
+     int count = 0;  
     size(950,150);
     byte b[] = loadBytes(fileName + fileExt);
     
-    for(int j = 0; j < 30; j ++) // change 30 to any value to generate more images
+    for(int j = 0; j < 200; j ++) // change 30 to any value to generate more images
   
     {
       
@@ -49,12 +49,13 @@
       try
   
       {
-  
+        
+       
         PImage myImage = loadImage("./temp/"+fileName + Integer.toString(j) + fileExt); 
         size (myImage.width,myImage.height);
         image(myImage, 0, 0);
-        saveFrame("./results/"+ fileName + Integer.toString(j) + fileExt);
-  
+        saveFrame("./results/"+ fileName + count + fileExt);
+        count++;
       }
   
       catch (Exception e)
